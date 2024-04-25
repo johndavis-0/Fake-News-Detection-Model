@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Circular Shape</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="image-container">
+        <h1 id="mainHeading">Project</h1>
+        <!-- Assuming the image is set as a background; otherwise, include an <img> tag here -->
+    </div>
+
+    <div id="inputContainer">
+        <input type="text" id="inputField" placeholder="Enter your news here.">
+        <button id="sendButton">➤</button>
+    </div>
+
+    <div id="layer1" class="layer"></div>
+    <div id="layer2" class="layer"></div>
+    <div id="layer3" class="layer"></div>
+    <script src="script.js"></script>
+    <div id="fakeMessage" class="message hidden" style="background-color: red; color: white; text-align: center;">
+        <h1>FAKE</h1>
+    </div>
+    <div id="trueMessage" class="message hidden" style="background-color: green; color: white; text-align: center;">
+        <h1>TRUE</h1>
+    </div>
+</body>
+</html>

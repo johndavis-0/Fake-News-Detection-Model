@@ -1,0 +1,228 @@
+/* style.css */
+#amoeba {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    background-color: rgb(0, 255, 255);
+    opacity: 0.6;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+}
+
+.image-container {
+    position: relative; /* Establishes a positioning context for inner elements */
+    background-image: url('path/to/your/image.jpg'); /* Set your image path here */
+    background-size: cover; /* Ensure the background covers the div */
+    background-position: center; /* Center the background image */
+    height: 600px; /* Set to the desired height */
+    display: flex; /* Use flexbox to center the content */
+    align-items: start; /* Align items at the start (top) of the container */
+    justify-content: center; /* Center content horizontally */
+}
+
+#mainHeading {
+    font-family: 'Roboto', sans-serif; /* Or any other modern, sleek font */
+    font-size: 2.5rem; /* Adjust based on your design */
+    color: #ffffff; /* A bright, futuristic color */
+    /* animation: glow 0.5s infinite alternate; Apply the glow animation */
+    text-align: center;
+    padding: 20px;
+}
+
+/* Ensure the font import is included in your CSS if not already */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+#mainHeading:hover {
+    animation: none; /* Stop the glow animation */
+    color: #FFFFFF; /* Change color on hover for a cool effect */
+    transition: color 0.3s ease-in-out;
+    text-shadow: 0 0 1px #111111, 0 0 2px #f9fafa, 0 0 4px #00E6E6, 0 0 8px #00DBDB; /* Less intense glow on hover */
+}
+
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 8px #00E6E6, 0 0 10px #00E6E6, 0 0 20px #00E6E6, 0 0 40px #00DBDB, 0 0 80px #00DBDB, 0 0 120px #00DBDB;
+    }
+    50% {
+        text-shadow: 0 0 4px #00E6E6, 0 0 10px #00E6E6, 0 0 15px #00E6E6, 0 0 20px #00DBDB, 0 0 35px #00DBDB, 0 0 40px #00DBDB;
+    }
+}
+
+
+/* Example of importing a font from Google Fonts */
+
+
+@media (max-width: 768px) {
+    #mainHeading {
+        font-size: 1.5rem; /* Smaller font size on mobile devices */
+    }
+}
+
+
+
+/* Continue with the same @keyframes pulse for gentle pulsing */
+
+
+/* Simple animation to change shape */
+@keyframes pulse {
+    0% {
+        border-radius: 50%;
+    }
+    50% {
+        border-radius: 30%;
+    }
+    100% {
+        border-radius: 50%;
+    }
+}
+
+#amoeba {
+    animation: pulse 2s infinite;
+}
+
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* style.css */
+.layer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 20vw; /* Increase width */
+    height: 20vw; /* Increase height, keeping the aspect ratio if desired */
+    background-color: #ADD8E6; /* Base color */
+    opacity: 0.7; /* Adjusted opacity for a lighter feel */
+    transition: all 0.5s ease;
+    transform-origin: center;
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.8), /* Inner light blue glow */
+                 0 0 20px rgba(0, 255, 255, 0.7), /* Outer light blue glow */
+                 0 0 30px rgba(0, 255, 255, 0.6), /* Further outer glow */
+                 0 0 40px rgba(0, 255, 255, 0.5); /* Most distant glow */
+    border-radius: 50%; /* Start with a circular shape */
+    animation: none; /* Remove any previous animations */
+    z-index: 1;
+}
+
+@keyframes flow {
+    0% {
+        border-radius: 50%;
+    }
+    25% {
+        border-radius: 60% 40% 60% 40% / 40% 60% 40% 60%;
+    }
+    50% {
+        border-radius: 40% 60% 40% 60% / 60% 40% 60% 40%;
+    }
+    75% {
+        border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+    }
+    100% {
+        border-radius: 60% 40% 60% 40% / 40% 60% 40% 60%;
+    }
+}
+
+#layer1 {
+    background-color: #add8e6; /* Light blue */
+    z-index: 2; /* Ensure layer1 is above other layers */
+    animation: orbitAround 3s linear infinite; /* New animation for movement */
+}
+
+#layer2 {
+    background-color: #bfefff; /* Lighter blue */
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+#layer3 {
+    background-color: #e0ffff; /* Lightest blue, almost white */
+    transform: translate(-50%, -50%) scale(0.8);
+}
+
+@keyframes simpleOrbit {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(10vw); /* Example of a simple, linear movement */
+    }
+}
+
+@keyframes orbitAround {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) translateX(20px);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(180deg) translateX(20px);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg) translateX(20px);
+    }
+}
+
+.hidden {
+    display: none; /* Ensures the element is not displayed initially */
+}
+
+#inputContainer {
+    position: fixed;
+    bottom: 50px; /* Positioning adjustment */
+    left: 0;
+    right: 0;
+    text-align: center;
+    transition: all 0.3s ease; /* Smooth transition for appearance */
+}
+
+#inputField, #sendButton {
+    /* Styling for a modern, minimalistic look */
+    padding: 10px;
+    margin: 0 5px;
+    border-radius: 20px;
+    border: 2px solid #00E6E6;
+    outline: none;
+}
+
+#inputField {
+    width: calc(60% - 20px); /* Adjust based on padding and margin */
+}
+
+#sendButton {
+    background-color: #00E6E6;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#sendButton:hover {
+    background-color: #008B8B; /* Interaction feedback */
+}
+
+
+@keyframes clickAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.buttonClickAnimate {
+    animation: clickAnimation 0.3s ease forwards;
+}
+
+.hidden {
+    display: none;
+}
